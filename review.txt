@@ -1,0 +1,46 @@
+YAML
+- Yaml file could use a client service to get the http server running, everything else looks good.
+
+
+DB
+- Looks like image functionality was being planned, cool idea
+
+
+CLIENT
+- Could do with moving the CSS out of the HTML file into the CSS just for readability 
+
+- Title and favicon would be a nice addition
+
+- Quite a few CSS selectors have repeated styling that could maybe be condensed into one class 
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 12.5px;
+
+- Add camelcase to HTML ids and classes just for better readability
+
+- Empty nav and footer in HTML, was there a plan to use in the future?
+
+- HTML is really well formated and indentation is good, very easy to follow and read
+
+- A lot of commented out code in index.js
+
+- getAllPosts works well and is well written. To get the styling a bit nicer, could maybe have 3 tags for each area instead of just 1 p tag and give them a class to style them.
+
+- Line 37 in index.js isn't needed as repeated in the object below
+
+- To get the addPost function to work you just need to add '//' after 'http:' so that the url is http://localhost:3000/posts
+
+
+API
+- Good file structure for linking the api together.
+
+- id route works but is the default Mongo object id format so would be good to change that for ease:
+    Line 19/32/33 of postmodels.js change the _id to just id and that should do it
+    Also means line 2 of postmodels.js isn't needed either
+
+- Line 17 of postcontroller.js might be better to pass the id as an integer with parseInt() (We think aha)
+
+- Line 26 of postcontroller.js you can just use req.body instead of all the individual selectors (with the link change from above as well ofc)
+
+- Good use of status codes and try/catch error handling
